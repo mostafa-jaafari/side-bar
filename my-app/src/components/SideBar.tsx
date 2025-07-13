@@ -11,20 +11,27 @@ export default function SideBar() {
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
     return (
         <main
-            className="min-w-58 h-max bg-neutral-100 rounded-lg 
+            className="w-20 md:w-58 lg:w-58 flex-shrink-0 h-max bg-neutral-100 rounded-lg 
                 sticky top-0 border border-neutral-200"
         >
-            <h1
-                className="flex items-center gap-4 text-2xl 
+            <div
+                className="flex items-center lg:justify-start md:justify-start justify-center gap-4 text-2xl 
                     font-semibold px-4 py-4"
             >
-                Side-Bar <Command />
-            </h1>
+                <h1
+                    className="lg:flex md:flex hidden"
+                >
+                    Side-Bar
+                </h1>
+                <Command 
+                    size={26}
+                />
+            </div>
             <div
                 className="py-4 px-4 space-y-2"
             >
                 <h3
-                    className="uppercase text-neutral-600 text-xs py-2"
+                    className="uppercase lg:text-start md:text-start text-center text-neutral-600 text-xs py-2"
                 >
                     Main Menu
                 </h3>
@@ -43,7 +50,7 @@ export default function SideBar() {
                                             text-black cursor-pointer text-sm
                                             hover:bg-neutral-300/50 py-1 px-2 rounded-lg"
                                     >
-                                        <link.icon size={20}/> {link.label}
+                                        <link.icon size={20}/> <span className="lg:block md:block hidden">{link.label}</span>
                                     </li>
                                 </Link>
                             )
@@ -63,7 +70,7 @@ export default function SideBar() {
                                         <li
                                             className="flex items-center gap-2"
                                         >
-                                            <link.icon size={20}/> {link.label}
+                                            <link.icon size={20}/> <span className="lg:block md:block hidden">{link.label}</span>
                                         </li>
                                         <ChevronDown 
                                             size={16}
@@ -84,9 +91,12 @@ export default function SideBar() {
                                                 >
                                                     <li
                                                         className="flex items-center gap-2 text-neutral-700
-                                                            hover:bg-neutral-300/50 rounded-lg px-2 py-1"
+                                                            hover:bg-neutral-300/50 rounded-lg lg:px-2 md:px-2 
+                                                            lg:py-1 md:py-1"
                                                     >
-                                                        <chil.icon size={16}/> {chil.label}
+                                                        <span className="p-1 flex justify-center items-center">
+                                                            <chil.icon size={16}/>
+                                                        </span> <span className="lg:block md:block hidden">{link.label}</span>
                                                     </li>
                                                 </Link>
                                             )
@@ -98,7 +108,7 @@ export default function SideBar() {
                     })}
                 </ul>
                 <h3
-                    className="uppercase text-neutral-600 text-xs py-2"
+                    className="uppercase lg:text-start md:text-start text-center text-neutral-600 text-xs py-2"
                 >
                     Teams
                 </h3>
@@ -125,7 +135,7 @@ export default function SideBar() {
                                                     items-center justify-center
                                                     rounded ${link.label.charAt(0).toLowerCase() === "p" ? "bg-orange-600" : "bg-blue-600"}`}
                                             >{link.label.charAt(0). toUpperCase()}</div>
-                                        )} {link.label}
+                                        )} <span className="lg:block md:block hidden">{link.label}</span>
                                         </div> {link.label.toLowerCase() !== "all teams" && (<Lock size={14} />)}
                                     </li>
                                 </Link>
@@ -133,7 +143,7 @@ export default function SideBar() {
                         })}
                 </ul>
                 <h3
-                    className="uppercase text-neutral-600 text-xs py-2"
+                    className="uppercase lg:text-start md:text-start text-center text-neutral-600 text-xs py-2"
                 >
                     Reports
                 </h3>
@@ -151,14 +161,14 @@ export default function SideBar() {
                                             text-black cursor-pointer text-sm
                                             hover:bg-neutral-300/50 py-1 px-2 rounded-lg"
                                     >
-                                        <link.icon size={20}/> {link.label}
+                                        <link.icon size={20}/> <span className="lg:block md:block hidden">{link.label}</span>
                                     </li>
                                 </Link>
                             )
                         })}
                 </ul>
                 <h3
-                    className="uppercase text-neutral-600 text-xs py-2"
+                    className="uppercase lg:text-start md:text-start text-center text-neutral-600 text-xs py-2"
                 >
                     Metrics
                 </h3>
@@ -176,7 +186,7 @@ export default function SideBar() {
                                             text-black cursor-pointer text-sm
                                             hover:bg-neutral-300/50 py-1 px-2 rounded-lg"
                                     >
-                                        <link.icon size={20}/> {link.label}
+                                        <link.icon size={20}/> <span className="lg:block md:block hidden">{link.label}</span>
                                     </li>
                                 </Link>
                             )
