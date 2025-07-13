@@ -1,4 +1,3 @@
-// sidebarData.ts
 import {
   Home,
   Settings,
@@ -8,7 +7,6 @@ import {
   Star,
   HelpCircle,
   Shield,
-  Lock,
   Calendar,
   FileText,
   BarChart,
